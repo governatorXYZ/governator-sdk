@@ -27,10 +27,8 @@ jobs:
         run: |
           npm whoami
           npm adduser <<!
-          $NPM_USERNAME
-          $NPM_PASSWORD
-          $NPM_EMAIL
-          !
+          echo "_auth = $NODE_AUTH_TOKEN" > ~/.npmrc
+          echo "email = $NPM_EMAIL" >> ~/.npmrc
           npm whoami
           npm run build
           npm publish
