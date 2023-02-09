@@ -25,7 +25,7 @@ jobs:
           NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
         run: |
           npm whoami
-          ls
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc
           cat ./.npmrc
           npm run build
           npm publish
