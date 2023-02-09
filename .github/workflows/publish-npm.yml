@@ -26,10 +26,8 @@ jobs:
           NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
         run: |
           npm whoami
-          npm adduser <<!
           echo "_auth = $NODE_AUTH_TOKEN" > ~/.npmrc
           echo "email = $NPM_EMAIL" >> ~/.npmrc
-          npm whoami
           npm run build
           npm publish
       - run: echo "Job completed with exit status ${{ job.status }}."   
