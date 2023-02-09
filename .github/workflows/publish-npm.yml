@@ -25,7 +25,8 @@ jobs:
           NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
         run: |
           npm whoami
-          cat ~/.npmrc
+          ls
+          cat ./.npmrc
           npm run build
           npm publish
       - run: echo "Job completed with exit status ${{ job.status }}."   
