@@ -22,6 +22,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           SDK_GIT_ORG_OR_USER: ${{ vars.SDK_GIT_ORG_OR_USER }}
         run: |
+          npm whoami
           npm run build
           npm publish
       - run: echo "Job completed with exit status ${{ job.status }}."   
