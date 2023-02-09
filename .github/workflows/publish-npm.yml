@@ -20,14 +20,13 @@ jobs:
       - name: Publish package
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          SDK_GIT_ORG_OR_USER: ${{ vars.SDK_GIT_ORG_OR_USER }}
           NPM_USERNAME: ${{ secrets.NPM_USERNAME }}
           NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
           NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
         run: |
           npm whoami
-          echo "_auth = $NODE_AUTH_TOKEN" > ~/.npmrc
-          echo "email = $NPM_EMAIL" >> ~/.npmrc
+          npm install -g npm-cli-login
+          npm-cli-login -u "$NPM_USERNAME" -p "$NPM_PASSWORD" -e "$NPM_EMAIL"
           npm run build
           npm publish
       - run: echo "Job completed with exit status ${{ job.status }}."   
