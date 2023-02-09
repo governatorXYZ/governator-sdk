@@ -20,6 +20,7 @@ jobs:
       - name: Publish package
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          SDK_GIT_ORG_OR_USER: ${{ vars.SDK_GIT_ORG_OR_USER }}
         run: |
           npm run build
           npm publish
