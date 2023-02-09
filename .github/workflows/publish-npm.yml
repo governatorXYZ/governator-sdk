@@ -21,7 +21,16 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           SDK_GIT_ORG_OR_USER: ${{ vars.SDK_GIT_ORG_OR_USER }}
+          NPM_USERNAME: ${{ secrets.NPM_USERNAME }}
+          NPM_PASSWORD: ${{ secrets.NPM_PASSWORD }}
+          NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
         run: |
+          npm whoami
+          npm adduser <<!
+          $NPM_USERNAME
+          $NPM_PASSWORD
+          $NPM_EMAIL
+          !
           npm whoami
           npm run build
           npm publish
