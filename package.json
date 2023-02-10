@@ -1,11 +1,11 @@
 {
   "name": "governator-sdk",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "OpenAPI client for governator-sdk",
   "author": "OpenAPI-Generator Contributors",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
+    "url": "https://github.com/governatorXYZ/governator-sdk.git"
   },
   "keywords": [
     "axios",
