@@ -1,6 +1,6 @@
 {
   "name": "governator-sdk",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "OpenAPI client for governator-sdk",
   "author": "OpenAPI-Generator Contributors",
   "repository": {
